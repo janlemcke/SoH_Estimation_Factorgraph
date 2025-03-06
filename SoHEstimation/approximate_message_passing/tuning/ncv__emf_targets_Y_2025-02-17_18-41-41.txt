@@ -1,0 +1,53 @@
+Nested Cross-Validation Results
+Target: targets_Y
+Factor: emf
+Moment: both
+Seed: 123456789
+Shape of X: (4795, 8)
+Shape of y: (4795, 2)
+------------------------------------------------------
+Hyperparameter Grid:
+N_neurons: [8, 16, 32, 64, 512, 1024, 2024]
+N_layers: [1, 2, 3]
+Activation Function: [relu, tanh_fast]
+Output Layer Choice: [softplus, relu]
+Scaling: [minmax, zscore]
+Output scaling: [minmax, zscore]
+Batch Size: [256, 512]
+Loss Function: [rmse_loss]
+Amount of combinations: 336
+------------------------------------------------------
+Outer folds: 5, Inner folds: 3
+------------------------------------------------------
+Outer fold 1:
+  Best hyperparameters: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 0.007069851257924841
+  Test RMSE: 0.007800634092374698
+  Best RMSE Overall: 0.007800634092374698
+Outer fold 2:
+  Best hyperparameters: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 0.007069998942173136
+  Test RMSE: 0.00707414131518244
+  Best RMSE Overall: 0.00707414131518244
+Outer fold 3:
+  Best hyperparameters: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 0.007069664107314209
+  Test RMSE: 0.00855789640358026
+  Best RMSE Overall: 0.00707414131518244
+Outer fold 4:
+  Best hyperparameters: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 0.0070697540227513435
+  Test RMSE: 0.007075576006276178
+  Best RMSE Overall: 0.00707414131518244
+Outer fold 5:
+  Best hyperparameters: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 0.007069756873601971
+  Test RMSE: 0.007069963270663379
+  Best RMSE Overall: 0.007069963270663379
+
+Nested Cross-Validation Final Results:
+  RMSE per Fold: Any[0.007800634092374698, 0.00707414131518244, 0.00855789640358026, 0.007075576006276178, 0.007069963270663379]
+  Best Hyperparameters Overall: (2024, 1, "tanh_fast", "relu", :minmax, :zscore, 512, Main.NN.rmse_loss)
+  Best RMSE Overall: 0.007069963270663379
+  Best Scale type: minmax
+  Best Scale output type: zscore

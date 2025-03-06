@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+generally:\\
+\begin{align}
+\mu = \frac{\tau}{\rho} \hspace{2cm}    \tau = \frac{\mu}{\sigma^2}\\[1em]
+\sigma^2 = \frac{1}{\rho} \hspace{2cm} \rho = \frac{1}{\sigma^2}
+\end{align}
+
+scalingfactor
+
+\begin{align*}
+\mu' &= \frac{\mu}{a} \\
+\sigma'^2 &= \frac{\sigma^2}{a^2} \\[1em]
+\tau' &= \frac{\mu'}{\sigma'^2} = \frac{\frac{\mu}{a}}{\frac{\sigma^2}{a^2}} = \frac{\mu}{a} \cdot \frac{a^2}{\sigma^2} = \frac{\mu \cdot a}{\sigma^2} = \frac{\frac{\tau}{\rho} \cdot a}{\frac{1}{\rho}} = \frac{\tau}{\rho} \cdot a \cdot \rho = \tau \cdot a \\[1em]
+\rho' &= \frac{1}{\sigma'^2} = \frac{1}{\frac{\sigma^2}{a^2}} = \frac{a^2}{\sigma^2} = \frac{a^2}{\frac{1}{\rho}} = a^2 \cdot \rho
+\end{align*}
+
+scalingfactor with bias $b$
+
+
+
+
+\[
+y = ax + b
+\]
+
+\[
+m_{f \rightarrow y} = \mathcal{N}(z; a\mu_x + b, a^2 \sigma_x^2)
+\]
+\hrulefill
+
+\[
+x = \frac{y - b}{a}
+\]
+
+\[
+a = 1, b = -{b}
+\] (ignore the $\frac{1}{a}$, while reassigning $a$ and $b$, and just add it to the message Distribution, because $E[c \cdot X] = c \cdot E[X]$ and $Var[c \cdot X] = c^2 \cdot Var[X]$)
+
+
+\[
+m_{f \rightarrow x} = \mathcal{N} \left(z_i; \left(\frac{\mu_y - b}{a}\right), \frac{\sigma_y^2}{a^2} \right)
+\]
+
+\[
+\mu' = \frac{\mu - b}{a}
+\]
+
+\[
+\sigma'^2 = \frac{\sigma^2}{a^2}
+\]
+
+\[
+\tau' = \frac{\mu'}{\sigma'^2} = \frac{\frac{\mu - b}{a}}{\frac{\sigma^2}{a^2}} = \frac{\mu - b}{a} \cdot \frac{a^2}{\sigma^2}
+\]
+
+\[
+    = \frac{\frac{\tau}{\rho} - b}{a} \cdot \frac{a^2}{\frac{1}{\rho}} = (\frac{\tau}{\rho} - b)\cdot a\cdot \rho 
+\]
+
+\[
+    = a \tau - ab\rho
+\]
+
+
+\[
+\rho' = \frac{1}{\sigma'^2} = \frac{1}{\frac{\sigma^2}{a^2}} = \frac{a^2}{\sigma^2} = \frac{a^2}{\frac{1}{\rho}} = a^2 \rho
+\]
+
+\hrulefill
+
+weightedsumfactor with bias $c$
+
+\begin{align*}
+    z = a \cdot x + b \cdot y + c \\
+    \rightarrow a = a, b = b, c = c\\
+    m_{f \rightarrow z} = \mathcal{N}(z; a\mu_x + b\mu_y + c, a^2 \sigma_x^2 + b^2 \sigma_y^2)\\\\
+    \\\\
+    x = \frac{z - b \cdot y - c}{a}\\
+    \rightarrow a = 1, b = -1, c = - c, \\\text{handle constant factor same as before, in scalingfactor}\\
+    m_{f \rightarrow x} = \mathcal{N}(z; \frac{\mu_z - b\mu_y - c}{a}, \frac{\sigma_z^2 + b^2 \sigma_y^2}{a^2})\\\\
+    \\\\
+    y = \frac{z - a \cdot x - c}{b}\\
+    \rightarrow a = 1, b = -1, c = - c, \\\text{handle constant factor same as before, in scalingfactor}\\
+    m_{f \rightarrow y} = \mathcal{N}(z; \frac{\mu_z - a\mu_x - c}{b}, \frac{\sigma_z^2 + a^2 \sigma_y^2}{b^2})\\\\
+\end{align*}
+
+
+\end{document}

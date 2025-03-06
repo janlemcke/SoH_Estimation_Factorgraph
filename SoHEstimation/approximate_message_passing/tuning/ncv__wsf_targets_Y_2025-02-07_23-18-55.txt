@@ -1,0 +1,53 @@
+Nested Cross-Validation Results
+Target: targets_Y
+Factor: wsf
+Moment: both
+Seed: 123456789
+Shape of X: (4854, 9)
+Shape of y: (4854, 2)
+------------------------------------------------------
+Hyperparameter Grid:
+N_neurons: [8, 16, 32, 64, 512, 1024, 2024]
+N_layers: [1, 2, 3]
+Activation Function: [relu, tanh_fast]
+Output Layer Choice: [softplus, relu]
+Scaling: [minmax, zscore]
+Output scaling: [minmax, zscore]
+Batch Size: [256, 512]
+Loss Function: [rmse_loss]
+Amount of combinations: 336
+------------------------------------------------------
+Outer folds: 5, Inner folds: 3
+------------------------------------------------------
+Outer fold 1:
+  Best hyperparameters: (512, 3, "tanh_fast", "softplus", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 7.197184740661193
+  Test RMSE: 6.267160939725155
+  Best RMSE Overall: 6.267160939725155
+Outer fold 2:
+  Best hyperparameters: (512, 2, "tanh_fast", "relu", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 7.496265191586275
+  Test RMSE: 4.670939635139484
+  Best RMSE Overall: 4.670939635139484
+Outer fold 3:
+  Best hyperparameters: (512, 2, "tanh_fast", "softplus", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 6.432429613425029
+  Test RMSE: 4.382649924876785
+  Best RMSE Overall: 4.382649924876785
+Outer fold 4:
+  Best hyperparameters: (512, 3, "tanh_fast", "softplus", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 6.737309544451217
+  Test RMSE: 5.126529075946765
+  Best RMSE Overall: 4.382649924876785
+Outer fold 5:
+  Best hyperparameters: (512, 2, "tanh_fast", "softplus", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 7.103711870690186
+  Test RMSE: 4.783532268439232
+  Best RMSE Overall: 4.382649924876785
+
+Nested Cross-Validation Final Results:
+  RMSE per Fold: Any[6.267160939725155, 4.670939635139484, 4.382649924876785, 5.126529075946765, 4.783532268439232]
+  Best Hyperparameters Overall: (512, 2, "tanh_fast", "softplus", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best RMSE Overall: 4.382649924876785
+  Best Scale type: zscore
+  Best Scale output type: zscore

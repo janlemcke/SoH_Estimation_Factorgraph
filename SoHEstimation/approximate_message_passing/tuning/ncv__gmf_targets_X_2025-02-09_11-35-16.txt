@@ -1,0 +1,53 @@
+Nested Cross-Validation Results
+Target: targets_X
+Factor: gmf
+Moment: both
+Seed: 123456789
+Shape of X: (4972, 5)
+Shape of y: (4972, 2)
+------------------------------------------------------
+Hyperparameter Grid:
+N_neurons: [8, 16, 32, 64, 512, 1024, 2024]
+N_layers: [1, 2, 3]
+Activation Function: [relu, tanh_fast]
+Output Layer Choice: [softplus, relu]
+Scaling: [minmax, zscore]
+Output scaling: [minmax, zscore]
+Batch Size: [256, 512]
+Loss Function: [rmse_loss]
+Amount of combinations: 336
+------------------------------------------------------
+Outer folds: 5, Inner folds: 3
+------------------------------------------------------
+Outer fold 1:
+  Best hyperparameters: (2024, 2, "relu", "relu", :minmax, :minmax, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 1.9181264190846636
+  Test RMSE: 3.455140313132716
+  Best RMSE Overall: 3.455140313132716
+Outer fold 2:
+  Best hyperparameters: (2024, 2, "relu", "softplus", :minmax, :minmax, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 1.7332230827110946
+  Test RMSE: 2.8151460504979746
+  Best RMSE Overall: 2.8151460504979746
+Outer fold 3:
+  Best hyperparameters: (512, 3, "tanh_fast", "relu", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 1.8891159768388188
+  Test RMSE: 1.523647643555481
+  Best RMSE Overall: 1.523647643555481
+Outer fold 4:
+  Best hyperparameters: (2024, 2, "relu", "relu", :minmax, :minmax, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 1.566772780410381
+  Test RMSE: 1.3858404774728232
+  Best RMSE Overall: 1.3858404774728232
+Outer fold 5:
+  Best hyperparameters: (512, 3, "tanh_fast", "relu", :zscore, :zscore, 512, Main.NN.rmse_loss)
+  Best inner RMSE: 2.0057352846009215
+  Test RMSE: 1.4044911059647627
+  Best RMSE Overall: 1.3858404774728232
+
+Nested Cross-Validation Final Results:
+  RMSE per Fold: Any[3.455140313132716, 2.8151460504979746, 1.523647643555481, 1.3858404774728232, 1.4044911059647627]
+  Best Hyperparameters Overall: (2024, 2, "relu", "relu", :minmax, :minmax, 512, Main.NN.rmse_loss)
+  Best RMSE Overall: 1.3858404774728232
+  Best Scale type: minmax
+  Best Scale output type: minmax
